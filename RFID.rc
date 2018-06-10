@@ -1,0 +1,505 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\RFID.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\RFID.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 RFID"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "RFID 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2018",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_RFID_DIALOG DIALOGEX 0, 0, 583, 291
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "RFID"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",0x0,7,7,569,277
+END
+
+IDD_APPDEV DIALOGEX 0, 0, 373, 167
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "电子钱包",IDC_STATIC,13,7,185,153
+    GROUPBOX        "历史交易记录",IDC_STATIC,206,7,160,153
+    COMBOBOX        IDC_SECTION,44,23,42,128,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_BLOCK,120,23,35,114,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "扇区：",IDC_STATIC,17,25,24,11
+    LTEXT           "块号：",IDC_STATIC,92,26,24,11
+    LTEXT           "余额：",IDC_STATIC,16,42,24,12
+    EDITTEXT        IDC_YUE,44,42,112,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "钱包初始化",IDC_INIT,42,65,48,13
+    PUSHBUTTON      "余额查询",IDC_YUESEARCH,113,65,42,13
+    LTEXT           "金额：",IDC_STATIC,16,89,25,12
+    EDITTEXT        IDC_MONEY1,43,88,111,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "充值",IDC_ADDMONEY,160,88,26,14
+    LTEXT           "金额：",IDC_STATIC,16,108,24,12
+    EDITTEXT        IDC_MONEY2,43,108,110,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "扣费",IDC_SUBMONEY,160,106,26,14
+    LTEXT           "状态：",IDC_STATIC,17,127,25,12
+    EDITTEXT        IDC_STATE,43,127,110,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "清空记录",IDC_CLEAR,240,140,39,14
+    PUSHBUTTON      "查询",IDC_SEARCH,300,140,34,14
+    EDITTEXT        IDC_RECORD,212,21,143,114,ES_MULTILINE | WS_VSCROLL,
+                    WS_EX_LEFTSCROLLBAR
+END
+
+IDD_DEBUGGER DIALOG DISCARDABLE  0, 0, 388, 183
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "开启卡片",IDC_StartCard,14,7,139,48
+    LTEXT           "状态：",IDC_STATE,17,23,25,8
+    LTEXT           "序列号：",IDC_NUMBER,17,40,33,8
+    EDITTEXT        IDC_EDIT_STATE,51,20,62,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_NUMVER,51,37,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "开启设备",IDC_START,115,20,34,13
+    PUSHBUTTON      "寻卡",IDC_FIND,115,37,34,13
+    GROUPBOX        "密码设置",IDC_PASSWORD,175,7,191,48
+    CONTROL         "B密钥",IDC_BPW,"Button",BS_AUTORADIOBUTTON,297,17,37,10
+    EDITTEXT        IDC_EDIT_PW,205,35,110,13,ES_AUTOHSCROLL
+    LTEXT           "密钥：",IDC_PW,180,37,25,11
+    PUSHBUTTON      "默认密钥",IDC_DEFAULT_PW,322,36,36,11
+    GROUPBOX        "卡片读写操作",IDC_CARD_RW,15,70,352,93
+    LTEXT           "块0信息：",IDC_BLOCK0_INFO,23,88,36,11
+    LTEXT           "块1信息：",IDC_BLOCK1_INFO,23,106,36,11
+    LTEXT           "块2信息：",IDC_BLOCK2_INFO,23,123,36,11
+    LTEXT           "块3信息：",IDC_BLOCK3_INFO,23,141,36,11
+    EDITTEXT        IDC_BLOCK0,61,87,170,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BLOCK1,61,105,170,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BLOCK2,61,122,170,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BLOCK3_1,61,140,70,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_SECTION,268,87,29,89,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "扇区：",IDC_SECTION_T,240,89,26,14
+    COMBOBOX        IDC_BLOCK,330,87,29,73,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "块号：",IDC_BLOCK_T,303,89,26,14
+    EDITTEXT        IDC_BLOCK3_2,140,140,71,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_BLOCK3_3,222,140,71,12,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "读扇区",IDC_READSECTION,241,111,50,14
+    PUSHBUTTON      "读块",IDC_READBLOCK,308,111,50,14
+    PUSHBUTTON      "写块",IDC_WRITEBLOCK,308,137,50,14
+    CONTROL         "A密钥",IDC_APW,"Button",BS_AUTORADIOBUTTON,202,19,45,10
+END
+
+IDD_FIND DIALOG DISCARDABLE  0, 0, 379, 167
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "卡片登录",IDC_StartCard,17,14,139,123
+    LTEXT           "学号：",IDC_NUMBER,22,38,25,8
+    EDITTEXT        IDC_EDIT_NUMVER,53,37,94,13,ES_AUTOHSCROLL
+    LTEXT           "密码：",IDC_NUMBER2,22,62,25,8
+    EDITTEXT        IDC_PASSWORD1,53,60,94,13,ES_AUTOHSCROLL
+    LTEXT           "挂失：",IDC_NUMBER3,22,85,25,8
+    EDITTEXT        IDC_LOSE,53,84,57,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "查询",IDC_FIND1,113,84,34,13
+    PUSHBUTTON      "解除挂失",IDC_LOSE_J,94,111,50,14
+    GROUPBOX        "信息一览",IDC_StartCard2,163,14,200,122
+    LTEXT           "序列号：",IDC_STATE2,166,37,33,8
+    LTEXT           "姓名：",IDC_NUMBER4,173,63,25,8
+    EDITTEXT        IDC_STUDENTID,199,35,61,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_NAME,198,62,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "学院：",IDC_NUMBER5,269,36,25,8
+    EDITTEXT        IDC_COLLEGE,295,35,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "性别：",IDC_NUMBER6,172,90,25,8
+    EDITTEXT        IDC_SEXUAL,198,88,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "查询卡片信息",IDC_FIND2,230,113,69,14
+    LTEXT           "年级：",IDC_STATE3,268,62,25,8
+    EDITTEXT        IDC_GRADE,295,61,62,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "余额：",IDC_NUMBER9,268,89,25,8
+    EDITTEXT        IDC_MONEY,295,87,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "申请挂失",IDC_LOSE_S,27,111,50,14
+END
+
+IDD_TRANSFER DIALOG DISCARDABLE  0, 0, 376, 166
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "开启卡片",IDC_StartCard,15,13,142,64
+    LTEXT           "设备：",IDC_STATE,20,32,25,8
+    LTEXT           "序列号：",IDC_NUMBER,18,52,33,8
+    EDITTEXT        IDC_EDIT_STATE,51,31,62,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_NUMVER,51,50,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "开启",IDC_START,117,30,34,13
+    PUSHBUTTON      "寻卡",IDC_FIND1,117,51,34,13
+    LTEXT           "学号：",IDC_NUMBER2,21,95,26,9
+    EDITTEXT        IDC_EDIT_NUMVER2,52,93,97,13,ES_AUTOHSCROLL
+    LTEXT           "挂失：",IDC_NUMBER3,21,132,25,8
+    EDITTEXT        IDC_LOSE,51,129,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "查询",IDC_FIND2,118,129,34,13
+    GROUPBOX        "信息一览",IDC_StartCard2,168,14,197,132
+    LTEXT           "序列号：",IDC_STATE2,172,43,33,8
+    LTEXT           "姓名：",IDC_NUMBER4,173,72,25,8
+    EDITTEXT        IDC_CARDID,205,42,55,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_NAME,198,71,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "学院：",IDC_NUMBER5,269,42,25,8
+    EDITTEXT        IDC_COLLEGE,295,41,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "性别：",IDC_NUMBER6,172,102,25,8
+    EDITTEXT        IDC_SEXUAL,198,100,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "转移信息",IDC_TRANSFER,279,123,50,14
+    LTEXT           "年级：",IDC_STATE3,268,73,25,8
+    EDITTEXT        IDC_GRADE,295,72,62,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "余额：",IDC_NUMBER9,268,103,25,8
+    EDITTEXT        IDC_MONEY,295,101,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "密码：",IDC_NUMBER8,21,114,25,8
+    EDITTEXT        IDC_PASSWORD1,51,112,98,13,ES_AUTOHSCROLL
+    GROUPBOX        "卡片登录",IDC_STATIC,15,81,143,65
+    PUSHBUTTON      "查询信息",IDC_FIND3,209,123,50,14
+END
+
+IDD_CREATE DIALOG DISCARDABLE  0, 0, 381, 159
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "开启卡片",IDC_StartCard,14,14,142,132
+    LTEXT           "设备：",IDC_STATE,21,40,25,8
+    LTEXT           "序列号：",IDC_NUMBER,19,66,33,8
+    EDITTEXT        IDC_EDIT_STATE,55,39,62,12,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_NUMVER,55,64,62,13,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "开启",IDC_START,118,38,34,13
+    PUSHBUTTON      "寻卡",IDC_FIND,119,63,34,13
+    GROUPBOX        "信息一览",IDC_StartCard2,168,15,197,132
+    LTEXT           "学号：",IDC_STATE2,173,41,25,8
+    LTEXT           "姓名：",IDC_NUMBER4,174,69,25,8
+    EDITTEXT        IDC_STUDENTID,199,40,62,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NAME,199,68,62,13,ES_AUTOHSCROLL
+    LTEXT           "学院：",IDC_NUMBER5,270,42,25,8
+    EDITTEXT        IDC_COLLEGE,296,40,62,13,ES_AUTOHSCROLL
+    LTEXT           "性别：",IDC_NUMBER6,173,99,25,8
+    EDITTEXT        IDC_SEXUAL,199,97,62,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "删除卡片",IDC_CLEAR,279,123,50,14
+    LTEXT           "年级：",IDC_STATE3,269,70,25,8
+    EDITTEXT        IDC_GRADE,296,69,62,12,ES_AUTOHSCROLL
+    LTEXT           "余额：",IDC_NUMBER9,269,100,25,8
+    EDITTEXT        IDC_MONEY,296,98,62,13,ES_AUTOHSCROLL
+    LTEXT           "密码：",IDC_NUMBER8,22,89,25,8
+    EDITTEXT        IDC_PASSWORD1,55,88,97,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "创建卡片",IDC_WRITE,209,123,50,14
+    LTEXT           "确认密码：",IDC_NUMBER11,15,114,40,8
+    EDITTEXT        IDC_PASSWORD2,55,113,96,13,ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "RFID Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "RFID\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2018\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "RFID.EXE\0"
+            VALUE "ProductName", "RFID 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_RFID_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 576
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 284
+    END
+
+    IDD_APPDEV, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 366
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_DEBUGGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 381
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_FIND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 372
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_TRANSFER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
+    END
+
+    IDD_CREATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 374
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DEBUGGER DLGINIT
+BEGIN
+    IDC_SECTION, 0x403, 2, 0
+0x0030, 
+    IDC_SECTION, 0x403, 2, 0
+0x0031, 
+    IDC_SECTION, 0x403, 2, 0
+0x0032, 
+    IDC_SECTION, 0x403, 2, 0
+0x0033, 
+    IDC_SECTION, 0x403, 2, 0
+0x0034, 
+    IDC_SECTION, 0x403, 2, 0
+0x0035, 
+    IDC_SECTION, 0x403, 2, 0
+0x0036, 
+    IDC_SECTION, 0x403, 2, 0
+0x0037, 
+    IDC_SECTION, 0x403, 2, 0
+0x0038, 
+    IDC_SECTION, 0x403, 2, 0
+0x0039, 
+    IDC_SECTION, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_BLOCK, 0x403, 2, 0
+0x0030, 
+    IDC_BLOCK, 0x403, 2, 0
+0x0031, 
+    IDC_BLOCK, 0x403, 2, 0
+0x0032, 
+    IDC_BLOCK, 0x403, 2, 0
+0x0033, 
+    0
+END
+
+IDD_APPDEV DLGINIT
+BEGIN
+    IDC_SECTION, 0x403, 2, 0
+0x0030, 
+    IDC_SECTION, 0x403, 2, 0
+0x0031, 
+    IDC_SECTION, 0x403, 2, 0
+0x0032, 
+    IDC_SECTION, 0x403, 2, 0
+0x0033, 
+    IDC_SECTION, 0x403, 2, 0
+0x0034, 
+    IDC_SECTION, 0x403, 2, 0
+0x0035, 
+    IDC_SECTION, 0x403, 2, 0
+0x0036, 
+    IDC_SECTION, 0x403, 2, 0
+0x0037, 
+    IDC_SECTION, 0x403, 2, 0
+0x0038, 
+    IDC_SECTION, 0x403, 2, 0
+0x0039, 
+    IDC_SECTION, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_SECTION, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_BLOCK, 0x403, 2, 0
+0x0030, 
+    IDC_BLOCK, 0x403, 2, 0
+0x0031, 
+    IDC_BLOCK, 0x403, 2, 0
+0x0032, 
+    IDC_BLOCK, 0x403, 2, 0
+0x0033, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 RFID(&A)..."
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\RFID.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

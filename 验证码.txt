@@ -1,0 +1,34 @@
+	验证码的Java生成代码：
+
+		BufferedImage image = new BufferedImage(60,20,BufferedImage.TYPE_INT_RGB);
+		Graphics g = image.getGraphics();
+		Random r = new Random();
+		g.setColor(new Color(r.nextInt(255),r.nextInt(255),r.nextInt(255)));
+		g.fillRect(0, 0, 60, 20);
+		g.setColor(new Color(0,0,0));
+		String number = String.valueOf(r.nextInt(99999));
+		HttpSession session = request.getSession();
+		session.setAttribute("number", number);
+		g.drawString(number, 5, 15);
+		g.setColor(new Color(r.nextInt(255),r.nextInt(255),r.nextInt(255)));
+		g.drawLine(r.nextInt(60), r.nextInt(20), r.nextInt(60), r.nextInt(20));
+		g.drawLine(r.nextInt(60), r.nextInt(20), r.nextInt(60), r.nextInt(20));
+		g.drawLine(r.nextInt(60), r.nextInt(20), r.nextInt(60), r.nextInt(20));
+		response.setContentType("image/jpeg");
+		OutputStream os = response.getOutputStream();
+		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(os);
+		encoder.encode(image);
+
+
+
+在jsp中的代码：
+  		<%
+    		String info = (String)request.getAttribute("ver");
+    		 %>
+    		<tr>
+    			<td>请输入验证码：</td>
+    			<td><input type="text" name="vertification" id="vertification"/><img src="checkCode" id="img1" /></td>
+    			<td><a href="javascript:;"
+				onclick="document.getElementById('img1').src='checkCode?' + Math.random();">换一个</a>
+				<span ><%=info %></span></td>
+    		</tr>

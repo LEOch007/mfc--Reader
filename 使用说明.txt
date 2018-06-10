@@ -1,0 +1,61 @@
+一：文件说明
+SkinMagicLib.h 必须的头文件，请添加到工程中。
+SkinMagic.lib + SkinMagic.dll 动态链接库配套使用
+编译时需要在工程中添加SkinMagic.dll，程序运行时需要SkinMagic.dll
+
+以下版本的编译出来的程序运行时不再依赖SkinMagic.dll
+SkinMagicLibMD6.lib 静态链接库，用于VC6的Release版编译
+SkinMagicLibMT6.lib 静态链接库，用于VC6的Debug版编译
+
+
+二：使用步骤
+1。把SkinMagicLib.h, SkinMagicLibMT6.lib, SkinMagicLibMD6.lib放到你的VC6工程目录下
+2。在StdAfx.h中添加
+#include "SkinMagicLib.h"
+3。在工程设置中添加对应的库
+Win32 Release中填上SkinMagicLibMD6.lib 
+Win32 Debug中填上SkinMagicLibMT6.lib
+
+4。在InitInstance()函数的开始处添加初始化SkinMagic资源的代码。
+VERIFY(1 == InitSkinMagicLib(AfxGetInstanceHandle(), NULL, NULL, NULL));
+
+5。在InitInstance()函数中加载皮肤文件并设置程序皮肤。
+你可以选择添加皮肤文件到资源中，并编译到程序中。或者程序在运行时动态加载皮肤文件
+a. 比如添加corona.smf,设置资源类型为"SKINMAGIC",  资源ID为IDR_SKIN_CORONA
+ 
+	CBossKeyDlg dlg;
+	m_pMainWnd = &dlg;
+
+	//加载SkinMagic皮肤
+	VERIFY(1 == LoadSkinFromResource(NULL, (LPSTR)IDR_SKIN_CORONA, "SKINMAGIC"));
+	VERIFY(1 == SetWindowSkin(m_pMainWnd->m_hWnd, "MainFrame"));
+	VERIFY(1 == SetDialogSkin("Dialog"));
+
+	int nResponse = dlg.DoModalEx(bStartShow);
+	if (nResponse == IDOK)
+	{
+	}
+	else if (nResponse == IDCANCEL)
+	{
+	}
+b. 程序在运行时动态加载皮肤文件
+
+	CBossKeyDlg dlg;
+	m_pMainWnd = &dlg;
+
+	//加载SkinMagic皮肤
+	VERIFY(1 == LoadSkinFile("corona.smf"));
+	VERIFY(1 == SetWindowSkin(m_pMainWnd->m_hWnd, "MainFrame"));
+	VERIFY(1 == SetDialogSkin("Dialog"));
+
+	int nResponse = dlg.DoModalEx(bStartShow);
+	if (nResponse == IDOK)
+	{
+	}
+	else if (nResponse == IDCANCEL)
+	{
+	}
+
+6。在ExitInstance()函数中释放SkinMagic资源
+	//释放SkinMagic资源：
+	ExitSkinMagicLib();
